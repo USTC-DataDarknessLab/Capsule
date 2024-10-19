@@ -1,0 +1,78 @@
+# examples/configuration/ogbn_paper100m_disk.yaml
+model:
+  learning_task: NODE_CLASSIFICATION
+  encoder:
+    train_neighbor_sampling:
+      - type: UNIFORM
+        options:
+          max_neighbors: 10
+      - type: UNIFORM
+        options:
+          max_neighbors: 10
+      - type: UNIFORM
+        options:
+          max_neighbors: 10
+    layers:
+      - - type: FEATURE
+          output_dim: 128
+      - - type: GNN
+          options:
+            type: GRAPH_SAGE
+            aggregator: MEAN
+          input_dim: 128
+          output_dim: 256
+          bias: true
+      - - type: GNN
+          options:
+            type: GRAPH_SAGE
+            aggregator: MEAN
+          input_dim: 256
+          output_dim: 256
+          bias: true
+      - - type: GNN
+          options:
+            type: GRAPH_SAGE
+            aggregator: MEAN
+          input_dim: 256
+          output_dim: 172
+          bias: true
+  decoder:
+    type: NODE
+  loss:
+    type: CROSS_ENTROPY
+    options:
+      reduction: SUM
+  dense_optimizer:
+    type: ADAM
+    options:
+      learning_rate: 0.01
+storage:
+  device_type: cuda
+  dataset:
+    dataset_dir: /data/ogbn_papers100M/
+  edges:
+    type: FLAT_FILE
+  nodes:
+    type: HOST_MEMORY
+  features:
+    type: PARTITION_BUFFER
+    options:
+      num_partitions: 32
+      buffer_capacity: 5
+      prefetching: true
+      fine_to_coarse_ratio: 1
+      num_cache_partitions: 0
+      node_partition_ordering: DISPERSED
+  prefetch: false
+  shuffle_input: true
+  full_graph_evaluation: true
+training:
+  batch_size: 1024
+  num_epochs: 1
+  pipeline:
+    sync: true
+evaluation:
+  batch_size: 1000
+  pipeline:
+    sync: true
+  epochs_per_eval: 20

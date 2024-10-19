@@ -64,5 +64,27 @@
         "trainNUM": 1181421,
         "valNUM": 0,
         "testNUM": 0
+    },
+    "C2": {
+        "edges": 30561187,
+        "nodes": 2927963,
+        "rawFilePath": "capsule/data/raw/citation2",
+        "processedPath": "capsule/data/partition/C2",
+        "featLen": 128,
+        "classes": 0,
+        "trainNUM": 0,
+        "valNUM": 0,
+        "testNUM": 0
+    },
+    "VS": {
+        "edges": 5345897,
+        "nodes": 3538495,
+        "rawFilePath": "capsule/data/raw/vessel",
+        "processedPath": "capsule/data/partition/VS",
+        "featLen": 3,
+        "classes": 0,
+        "trainNUM": 0,
+        "valNUM": 0,
+        "testNUM": 0
     }
 }
