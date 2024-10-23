@@ -39,8 +39,7 @@ def PRgenG(RAWPATH,nodeNUM,originPartNUM,savePath=None):
 
     inNodeTable = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda")
     outNodeTable = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda")
-    nodeInfo = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda")
-    nodeInfo = nodeInfo - 1
+    nodeInfo = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda") - 1
     trainIds = trainIds.cuda()
     nodeInfo[trainIds] = trainIds.to(torch.int32)
 
@@ -461,7 +460,12 @@ if __name__ == '__main__':
     parser.add_argument('--partNUM', type=int, default=8, help='Number of layers')
     args = parser.parse_args()
 
-    JSONPATH = "./datasetInfo.json"
+    current_file_path = os.path.abspath(__file__)
+    root_dir = os.path.dirname(current_file_path)
+    relative_json_path = "../../datasetInfo.json"
+
+    JSONPATH = os.path.join(root_dir, relative_json_path)
+    print("JSON file path:", JSONPATH)
     partitionNUM = args.partNUM
     sliceNUM = 8
     with open(JSONPATH, 'r') as file:

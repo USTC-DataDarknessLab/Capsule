@@ -13,7 +13,7 @@
     "PD": {
         "edges": 123718280,
         "nodes": 2449029,
-        "rawFilePath": "capsule/data/raw/ogbn_products",
+        "rawFilePath": "capsule/data/raw/products",
         "processedPath": "capsule/data/partition/PD",
         "featLen": 100,
         "classes": 47,
