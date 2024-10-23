@@ -1,10 +1,16 @@
+"""
+If you only have a graph structure 
+and this graph does not contain features or labels, 
+you can use this method to randomly generate them.
+"""
+
 import dgl
 import torch
 import numpy as np
 
-RAWPATH = "capsule/data/raw/wb2001"
+RAWPATH = "path/to/your/graph"
 featlen = 100
-Ratio = 0.01    # train id ratio
+Ratio = 0.01    # Train id ratio
 
 graph = torch.as_tensor(np.fromfile(RAWPATH+"/graph.bin",dtype=np.int32))
 maxId = torch.max(graph) + 1    # from 0 - (maxId-1)

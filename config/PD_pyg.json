@@ -1,0 +1,26 @@
+{
+    "train_name": "NC",
+    "dataset": "PD",
+    "model": "SAGE",
+    "datasetpath": "./data/partition",
+    "partNUM":4,
+    "cacheNUM": 4,
+    "batchsize": 1024,
+    "maxEpoch": 20,
+    "maxPartNodeNUM":10000000,
+    "epochInterval": 5,
+    "featlen": 100,
+    "fanout": [
+        10,
+        10,
+        10
+    ],
+    "classes": 47,
+    "framework": "pyg",
+    "mode": "train",
+    "memUse": 1600000000,
+    "GPUmem:" :1600000000,
+    "edgecut" : 1,
+    "nodecut" : 1,
+    "featDevice" : "cuda:0" 
+}
