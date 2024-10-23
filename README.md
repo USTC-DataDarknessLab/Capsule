@@ -35,7 +35,7 @@ In the above, the rawFilePath and processedPath may need to be modified by the u
 
 After completing the above operations, you can complete the preprocessing operation with the following code (here only the example of dataset PD is given, where the partNUM parameter can be modified according to the machine environment used):
 ```
-python capsule/src/datapart/trans2subG.py --dataset=PD --partNUM=4
+python capsule/src/datapart/trans2subG.py --dataset=PD --cluster=4
 ```
 
 ## Train
