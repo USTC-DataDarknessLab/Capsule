@@ -16,6 +16,7 @@ python3 prepare_dataset.py
 # to see which one is the fastest.
 python3 create_neigh_cache.py --neigh-cache-size 6000000000
 
+python get_pythonpath.py
 
 # Run directly
-sudo PYTHONPATH=/home/bear/miniconda3/envs/graph/lib/python3.8/site-packages python -W ignore run_ginex.py --neigh-cache-size 6000000000 --feature-cache-size 6000000000
+sudo PYTHONPATH=/path/to/site-packages python -W ignore run_ginex.py --neigh-cache-size 6000000000 --feature-cache-size 6000000000

@@ -21,7 +21,7 @@ print('Loading dataset...')
 root = '/path/to/Ginex'
 os.makedirs(root, exist_ok=True)
 
-raw_path = '/raid/bear/data/raw/' + args.dataset
+raw_path = "prefix/path" + args.dataset
 
 
 featbin = raw_path + '/feat.bin'
