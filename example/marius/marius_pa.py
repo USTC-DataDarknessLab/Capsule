@@ -42,7 +42,7 @@ class MYDATASET(NodeClassificationDataset):
         if download:
             print("stop and prepare files needed")
 
-    def preprocess(self, num_partitions=16, remap_ids=True, splits=None, sequential_train_nodes=False, partitioned_eval=False):
+    def preprocess(self, num_partitions=32, remap_ids=True, splits=None, sequential_train_nodes=False, partitioned_eval=False):
         num_nodes = 111059956
         train_nodes = np.fromfile("./trainIds.bin",dtype=np.int64).astype(np.int32)
         valid_nodes = np.fromfile("./trainIds.bin",dtype=np.int64).astype(np.int32)

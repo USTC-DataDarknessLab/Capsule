@@ -4,7 +4,7 @@
 python capsule/src/datagen/products.py
 
 # Then, we need to partition the raw data
-python capsule/src/datapart/reorder/trans2subG.py --dataset=PD --partNUM=4
+python capsule/src/datapart/trans2subG.py --dataset=PD --force_partiton --partNUM=4
 
 # In the ./config , we provide a configuration file for running the PD dataset. 
 # We can use this configuration file to run the program

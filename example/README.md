@@ -1,5 +1,7 @@
 # Introduction to Running the Baseline Code
 
+Important: All baselines are based on binary data files. Therefore, if you need to run using the baseline, we generally need to convert the data into binary format. The data includes the graph (stored as edges, int32), features (float32), labels (int64), and node IDs (int64).
+
 ## DGL
 
 If the DGL environment is already installed, running the products, papers100M, or Reddit datasets provided directly by OGB/DGL should work without issues. However, if you want to run other datasets, you need to preprocess the data according to the capsule method first, converting the data into binary format.
