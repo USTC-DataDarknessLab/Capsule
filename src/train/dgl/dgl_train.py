@@ -168,10 +168,6 @@ if __name__ == '__main__':
         out_size = 150
         data = (train_idx,[],[])
         dataset = None
-    elif args.dataset == 'uk-2007-05':
-        g,train_idx = load_dataset(args.dataset,default_datasetpath,100,'mask')
-        out_size = 150
-        data = (train_idx,[],[])
     elif args.dataset == 'uk-2006-05':
         g,train_idx = load_dataset(args.dataset,default_datasetpath,100)
         train_idx = torch.tensor(train_idx).to(torch.int64)
