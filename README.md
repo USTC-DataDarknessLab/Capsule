@@ -33,9 +33,13 @@ This process generates subgraphs for the dataset and extracts features from the 
 ```
 In the above, the rawFilePath and processedPath may need to be modified by the user according to their needs, while other data are the default configurations of the dataset and do not need to be modified. rawFilePath is the location of the original dataset, and processedPath is the output location for preprocessing operations.
 
-After completing the above operations, you can complete the preprocessing operation with the following code (here only the example of dataset PD is given, where the partNUM parameter can be modified according to the machine environment used):
+After completing the above operations, you can complete the preprocessing operation with the following code. The processing can have two modes: one is the automatic partition merging method, and the other is the specified partition division method.:
 ```
+# auto
 python capsule/src/datapart/trans2subG.py --dataset=PD --cluster=4
+
+# force
+python capsule/src/datapart/trans2subG.py --dataset=PD --force_partiton --partNUM=4
 ```
 
 ## Train

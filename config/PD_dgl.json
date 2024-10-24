@@ -2,7 +2,7 @@
     "train_name": "NC",
     "dataset": "PD",
     "model": "SAGE",
-    "datasetpath": "./data/partition",
+    "datasetpath": "/home/bear/workspace/single/data/partition",
     "partNUM":4,
     "cacheNUM": 4,
     "batchsize": 1024,

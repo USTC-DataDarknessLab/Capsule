@@ -186,6 +186,10 @@ def force_PRgenG(RAWPATH,nodeNUM,partNUM,savePath=None):
     edgeNUM = len(src)
     trainIds = torch.from_numpy(np.fromfile(TRAINPATH,dtype=np.int64))
     
+    for i in range(partNUM):
+        PATH = savePath + f"/part{i}" 
+        checkFilePath(PATH)
+
     template_array = torch.zeros(nodeNUM,dtype=torch.int32)
 
     # Streaming edge data
@@ -196,7 +200,7 @@ def force_PRgenG(RAWPATH,nodeNUM,partNUM,savePath=None):
 
     inNodeTable = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda")
     outNodeTable = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda")
-    nodeInfo = torch.zeros(nodeNUM,dtype=torch.int32,device="cuda") - 1
+    nodeInfo = torch.zeros(nodeNUM,dtype=torch.int32)
     for src_batch,dst_batch in zip(*batch):
         src_batch,dst_batch = src_batch.cuda(),dst_batch.cuda()
         inNodeTable,outNodeTable = dgl.sumDegree(inNodeTable,outNodeTable,src_batch,dst_batch)
@@ -278,7 +282,6 @@ def force_PRgenG(RAWPATH,nodeNUM,partNUM,savePath=None):
         _ , sort_indice = torch.sort(partValue,dim=0,descending=True)
         sort_nodeid = nid[sort_indice]
         saveBin(sort_nodeid,PRvaluePath)
-    return subMap.shape[0]
 
 # =============== 2.graphToSub    
 def nodeShuffle(raw_node,raw_graph):
@@ -569,7 +572,6 @@ if __name__ == '__main__':
 
     JSONPATH = os.path.join(root_dir, relative_json_path)
     print("JSON file path:", JSONPATH)
-    partitionNUM = args.partNUM
     sliceNUM = 8
     with open(JSONPATH, 'r') as file:
         data = json.load(file)
@@ -582,7 +584,8 @@ if __name__ == '__main__':
         
         startTime = time.time()
         if args.force_partiton:
-            partitionNUM = force_PRgenG(GRAPHPATH,maxID,partitionNUM,savePath=subGSavePath)
+            partitionNUM = args.partNUM
+            force_PRgenG(GRAPHPATH,maxID,partitionNUM,savePath=subGSavePath)
         else:
             partitionNUM = auto_PRgenG(GRAPHPATH,maxID,args.cluster,savePath=subGSavePath)
         print(f"partition all cost:{time.time()-startTime:.3f}s")

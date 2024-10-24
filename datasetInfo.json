@@ -13,8 +13,8 @@
     "PD": {
         "edges": 123718280,
         "nodes": 2449029,
-        "rawFilePath": "capsule/data/raw/products",
-        "processedPath": "capsule/data/partition/PD",
+        "rawFilePath": "/home/user/capsule/data/raw/products",
+        "processedPath": "/home/user/capsule/data/partition/PD",
         "featLen": 100,
         "classes": 47,
         "trainNUM": 196615,
