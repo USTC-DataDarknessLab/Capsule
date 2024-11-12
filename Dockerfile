@@ -31,21 +31,3 @@ RUN conda create --name sgnn --file /app/docker/spec-list.txt \
 
 # Make RUN commands use the new environment:
 SHELL ["conda", "run", "--no-capture-output", "-n", "sgnn", "/bin/bash", "-c"]
-
-# WORKDIR /app/source
-# COPY . ./fgnn
-# # install dgl
-# RUN pip install 'numpy>=1.14.0' 'scipy>=1.1.0' 'networkx>=2.1' 'requests>=2.19.0' \
-#     && bash ./fgnn/3rdparty/dgl_install.sh
-# # install fastgraph
-# RUN bash ./fgnn/utility/fg_install.sh
-# # install pyg
-# RUN bash ./fgnn/3rdparty/pyg_install.sh
-
-# # install fgnn
-# RUN pushd ./fgnn \
-#     && bash ./build.sh \
-#     && rm -rf build \
-#     && rm -rf 3rdparty/dgl/build \
-#     && popd \
-#     && echo "ulimit -l unlimited" >> ~/.bashrc
