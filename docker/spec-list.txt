@@ -94,6 +94,5 @@ https://repo.anaconda.com/pkgs/main/linux-64/mkl_random-1.2.2-py38h417a72b_1.con
 https://repo.anaconda.com/pkgs/main/linux-64/numpy-1.24.3-py38hf6e8229_1.conda
 https://repo.anaconda.com/pkgs/main/linux-64/scipy-1.10.1-py38hf6e8229_1.conda
 https://repo.anaconda.com/pkgs/main/linux-64/torchmetrics-0.11.2-py38hb070fc8_0.conda
-https://conda.anaconda.org/dglteam/label/cu113/linux-64/dgl-1.1.0.cu113-py38_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/scikit-learn-1.2.2-py38h6a678d5_1.conda
 https://conda.anaconda.org/pyg/linux-64/pyg-2.3.0-py38_torch_1.12.0_cu113.tar.bz2
