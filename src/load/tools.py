@@ -2,7 +2,6 @@ import torch
 import dgl
 import numpy as np
 import time
-from memory_profiler import profile
 import gc
 
 def featSlice(raw_feat,beginIndex,endIndex,featLen):

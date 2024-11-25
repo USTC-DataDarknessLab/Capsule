@@ -14,7 +14,6 @@ import os
 import gc
 import psutil
 from tools import *
-from memory_profiler import profile
 #torch.set_printoptions(threshold=10000)
 curFilePath = os.path.abspath(__file__)
 curDir = os.path.dirname(curFilePath)

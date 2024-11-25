@@ -74,7 +74,6 @@ def train(dataset, model,basicLoop=0,loop=10):
             opt.step()
             total_loss += loss.item()
         print("| Epoch {:03d} | Loss {:.4f} | Time {:.3f}s |".format(basicLoop+epoch, total_loss / (it+1), time.time()-startTime))
-    torch.save(model.state_dict(), f'./model/parameters_{basicLoop+loop}.pth')
 
 def collate_fn(data):
     return data[0]
