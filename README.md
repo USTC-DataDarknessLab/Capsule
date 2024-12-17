@@ -1,7 +1,7 @@
 # Capsule
 - The implementation of Capsule an out-of-Core GNN training system. The work is published at ACM SIGMOD 2025.</br>
 >Yongan Xiang, Zezhong Ding, Rui Guo, Shangyou Wang, Xike Xie, S. Kevin Zhou. “Capsule: an Out-of-Core Training Mechanism for Colossal GNNs”. In Proceedings of the 2025 International Conference on Management of Data (SIGMOD ‘25).
-- Contact: ya_xiang@mail.ustc.edu.cn/zezhongding@mail.ustc.edu.cn
+- Contact: ya_xiang@mail.ustc.edu.cn, zezhongding@mail.ustc.edu.cn
 
 ## Requirements
 
