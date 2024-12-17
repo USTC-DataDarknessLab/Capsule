@@ -1,7 +1,7 @@
 # Capsule
-
-Code repository for the SIGMOD 25 under review paper:
-"Capsule: an Out-of-Core Training Mechanism for Colossal GNNs"
+- The implementation of Capsule an out-of-Core GNN training system. The work is published at ACM SIGMOD 2025.</br>
+>Yongan Xiang, Zezhong Ding, Rui Guo, Shangyou Wang, Xike Xie, S. Kevin Zhou. “Capsule: an Out-of-Core Training Mechanism for Colossal GNNs”. In Proceedings of the 2025 International Conference on Management of Data (SIGMOD ‘25).
+- Contact: ya_xiang@mail.ustc.edu.cn/zezhongding@mail.ustc.edu.cn
 
 ## Requirements
 
@@ -14,7 +14,7 @@ Since our framework includes code based on DGL, you need to install a version of
 
 ## Prepare Datasets
 
-We use six datasets in the paper: ogbn-papers, ogbn-products, Reddit,uk-2006-05, wb2001 and com_fr.
+We use six datasets in the paper: ogbn-papers, ogbn-products, Reddit, uk-2006-05, wb2001 and com_fr.
 
 Users can download and process datasets according to the code in capsule/src/datagen. The operations for dataset processing here are referenced from GNNLab: https://github.com/SJTU-IPADS/gnnlab
 
@@ -133,4 +133,7 @@ Run the code at the following path:
 ```sh
 python capsule_dgl_train.py --json_path /data/config/PD_dgl.json
 ```
+## Citation
+
+- The paper is coming soon.
 
